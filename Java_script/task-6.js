@@ -21,3 +21,63 @@
 // #validation - input.invalid {
 //     border - color: #f44336;
 // }
+
+// const formInputEl = document.querySelector(`#validation-input`);
+// console.log(formInputEl);
+// const validLength = Number(formInputEl.dataset.length);
+// console.log(validLength);
+// formInputEl.addEventListener(`blur`, onInputBlur);
+// function onInputBlur(event) {
+//   const currentLength = Number(event.currentTarget.value.length);
+//   console.log(currentLength);
+//   if (currentLength === validLength) {
+//     formInputEl.classList.remove(`invalid`);
+//     formInputEl.classList.add(`valid`);
+//   } else if (currentLength > validLength) {
+//     formInputEl.classList.replace(`valid`, `invalid`);
+//   } else if (currentLength < validLength) {
+//     formInputEl.classList.replace(`valid`, `invalid`);
+//   } else {
+//     formInputEl.classList.remove(`valid`);
+//     formInputEl.classList.remove(`invalid`);
+//   }
+// }
+
+const formInputEl = document.querySelector(`#validation-input`);
+console.log(formInputEl);
+const validLength = Number(formInputEl.dataset.length);
+console.log(validLength);
+formInputEl.addEventListener(`blur`, onInputBlur);
+function onInputBlur() {
+  formInputEl.classList.add(`invalid`);
+  if (formInputEl.value.length === validLength) {
+    formInputEl.classList.remove(`invalid`);
+    formInputEl.classList.add(`valid`);
+  } else if (formInputEl.value.length > validLength) {
+    formInputEl.classList.replace(`valid`, `invalid`);
+  } else if (formInputEl.value.length < validLength) {
+    formInputEl.classList.replace(`valid`, `invalid`);
+  } else {
+    formInputEl.classList.remove(`valid`);
+    formInputEl.classList.remove(`invalid`);
+  }
+}
+
+// const inputEl = document.querySelector("#validation-input");
+
+// inputEl.addEventListener("blur", validation);
+
+// const validLength = Number(inputEl.dataset.length);
+
+// function validation() {
+//   if (inputEl.value.length === validLength) {
+//     inputEl.classList.add("valid");
+//     inputEl.classList.remove("invalid");
+//   } else if (inputEl.value.length === 0) {
+//     inputEl.classList.remove("invalid");
+//     inputEl.classList.remove("valid");
+//   } else {
+//     inputEl.classList.add("invalid");
+//     inputEl.classList.remove("valid");
+//   }
+// }
