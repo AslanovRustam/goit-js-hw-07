@@ -3,3 +3,12 @@
 // < input id = "font-size-control" type = "range" />
 //     <br />
 //     <span id="text">Абракадабра!</span>
+const controlEl = document.querySelector(`#font-size-control`);
+const inputText = document.querySelector(`#text`);
+console.log(controlEl.value);
+// const inputEl = document.querySelector(`#name-input`);
+
+const inputChange = function () {
+  inputText.style.fontSize = controlEl.value + "px";
+};
+controlEl.addEventListener(`input`, inputChange);
